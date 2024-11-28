@@ -230,6 +230,7 @@ function App() {
           pulldownOptions={SHARE_TARGET_PICKER_FIXED_ARGUMENT_LIST}
           skipAutoRun={true}
           runner={async (options) => {
+            await new Promise(resolve => setTimeout(resolve, 1000));
             return await liff.shareTargetPicker([JSON.parse(options)])
           }}
           loginRequired={true}
